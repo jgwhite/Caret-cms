@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block sidebar %}
+    <h5>All pages</h5>
+    {{ page.map }}
+{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="span16">
+            <textarea style="width:100%;height:600px;">{{ page.body }}</textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span16">
+            <div class="actions" style="padding-left:20px;">
+                <input type="submit" class="btn primary" value="Save changes">
+                <button type="reset" class="btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
