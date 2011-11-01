@@ -1,4 +1,8 @@
-template : index
-title: Documentation 
-body : |
-    Dec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum. Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur blandit tempus porttitor. Etiam porta sem malesuada magna mollis euismod.    Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus.    Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum. Curabitur blandit tempus porttitor. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. 
+template : post
+title: Home 
+posts :
+    - title: This is my first post
+      body: Testing out Caret cms :)
+
+    - title: This is my second post
+      body: Lorem ipsum dolor ist...

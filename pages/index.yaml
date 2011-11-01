@@ -2,6 +2,32 @@ template : index
 title: Welcome 
 tagline: The little cms that could
 body : |
-    Dec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum. Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur blandit tempus porttitor. Etiam porta sem malesuada magna mollis euismod.    Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus.    Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum. Curabitur blandit tempus porttitor. Curabitur blandit tempus porttitor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+    ### Caret is a lightweight cms, built on the rules of simplicity.
+    
+    Managing the content of your site can turn into a nightmare if you wrangle a blogging tool to do the job for you. Caret does away with *assumption*. Nothing is assumed about your data, or the way you want to present it. It's all up to you.
 
-    <script src="https://gist.github.com/1330974.js?file=gistfile1.twig"></script>
+    What's more, Caret is built on the CodeIgniter framework so it's stable, secure and fast. Want to build some complex web app with a tiny cms? **Easy**, you can override Caret where you want it and use your own controllers, models and views.
+
+    #### Really simple example
+
+    ###### Write our data
+    
+    Let's make a really simple blog. In the pages/ folder, we'll create an index.yaml which will dictate the data for our homepage. Let's fill it out like so...
+
+    <script src="https://gist.github.com/1331179.js?file=index.yaml"></script>
+
+    Above, I've defined a list of posts, a bit of dummy content and a title for the page. The template key is the **only** necessary key/value in Caret and it lets the system know which template you want to render the data with.
+
+    The next thing to do is make that template.
+
+    ###### Create the template
+
+    Templates in Caret are written with the h2o templating language. It's really pretty and looks a bit like Liquid. Most of all, it's powerful & flexible so you can do practically anything with your data.
+
+    Because we defined 'template: post' in our index.yaml file, Caret will look for a file called post.html in the templates folder. Let's put one together really quickly...
+
+    <script src="https://gist.github.com/1331195.js?file=gistfile1.twig"></script>
+
+    That was pretty painless wasn't it. Obviously that's not valid HTML, but it's enough for us to check everything's working. Let's have a look in our browser.
+
+    ![Alt text](public/images/demo.gif)
