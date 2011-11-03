@@ -1,5 +1,6 @@
 <?
 h2o::addFilter('markdown');
+h2o::addFilter('textile');
 
 class CaretFilters extends FilterCollection{
     
@@ -8,4 +9,8 @@ class CaretFilters extends FilterCollection{
         return parse_markdown($text); 
     }
     
+    function textile($text){
+        $textile = new Textile;
+        return $textile->TextileThis($text);
+    }
 }

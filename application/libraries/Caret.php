@@ -1,7 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
 
 class Caret {
-
+    // This is where the magic happens
+    
     public function render_page($page_uri){
         // Get the controller instance of CodeIgniter
         $CI =& get_instance();
@@ -9,8 +10,8 @@ class Caret {
         // Load required files
         $CI->load->spark('markdown/1.2.0');
         $CI->load->helper('url');
-        
         require('application/libraries/h2o-php/h2o.php');
+        require('Textile.php');
         require('CaretFilters.php');
         require('CaretTags.php');
         include('application/libraries/yaml/lib/sfYamlParser.php');
@@ -20,18 +21,20 @@ class Caret {
         
         // Parse the contents of the yaml file into the $page array
         $page = $yaml->parse(file_get_contents('pages/' . $page_uri));
+        
 
         // Create the site array globals
-        $site = array(
-          'root' => base_url()  
+        $config = array(
+          'root' => base_url(),
+          'segments' => $CI->uri->segment_array()
         );
         
-        // Load the template
+        // Load the template using the yaml key 'template'
         $h2o = new h2o('templates/' . $page['template'] . '.html'); // load the template
 
-        
         // Return the final html
-        return html_entity_decode($h2o->render(compact('page', 'site')));
+        return html_entity_decode($h2o->render(compact('page', 'config')));
+        
     }
 
     public function render_admin_page($template_name, $page){
@@ -48,6 +51,9 @@ class Caret {
     }
 
     public function find_page($uri){
+        // UGH this function is so gross, but it works
+        //
+        //
         // Resolves a URI to a file within pages/
         if ($uri == "") { // If uri is blank, assume we mean the homepage
             return "index.yaml"; // Look for the index.yaml datafile
