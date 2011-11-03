@@ -47,3 +47,11 @@ html, body {
   .topbar .btn {
     border: 0;
   }
+
+.gist-meta{
+	display:none;
+}
+
+.gist-data{
+	height:170px;
+}

@@ -15,10 +15,12 @@ body : |
 tagline: A little thing by [@almonk](http://twitter.com/almonk)
 
 features:
-  - title: Boom a loom
+  - title: 1. Define your own data
     body: |
-      This is a test
+        <script src="https://gist.github.com/1331179.js?file=index.yaml"></script>
+        Define all the data you want and exactly how it should be organised in simple yaml files.
       
-  - title: Another test  
+  - title: 2. Write templates
     body: |
-      This is a test
+        <script src="https://gist.github.com/1331195.js?file=gistfile1.twig"></script>
+        Write templates to access your data and turn it into html
