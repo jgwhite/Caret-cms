@@ -37,20 +37,20 @@ class Children_of_Tag extends H2o_Node{
     }
     
     function render($context, $stream){
-
         $CI =& get_instance();
 
         $CI->load->helper('directory');
 
         // Map the directory beneath the specified folder
-        $children = directory_map('pages/' . $this->page . '/');
-        $yaml = new sfYamlParser();
-        
-        for ($i=0; $i < count($children) ; $i++) { 
-            // Loop through all the filenames and parse their yaml data into an array
-            $page = $yaml->parse(file_get_contents('pages/' . $this->page . '/' . $children[$i]));
-            $children[$i] = $page;
+        if ($this->page == '/') {
+          // Get children of the root
+          $children = directory_map('pages/');
+        }else{
+          // Look at the uri the user has provided
+          $children = directory_map('pages/' . $this->page . '/');
         }
+
+        $yaml = new sfYamlParser();
         
         $output = new StreamWriter;
        

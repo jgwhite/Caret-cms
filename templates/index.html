@@ -1,12 +1,16 @@
 {% extends 'default.html' %}
 
 {% block main %}
-
-    {% children_of docs %}
-        {% for child in children %}
-            <li>{{ child.title }}</li>
-        {% endfor %}
-    {% endchildren_of %}
-
     {{ page.body | markdown }}
+    
+    <div class="row">
+        {% if page.features %}
+            {% for feature in page.features %}
+                <div class="span5">
+                    <h6>{{ feature.title }}</h6>
+                    {{ feature.body | textile }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
 {% endblock %}

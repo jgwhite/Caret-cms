@@ -1,8 +1,27 @@
-template : post
-title: Home 
-posts :
-    - title: This is my first post
-      body: Testing out Caret cms :)
+template : index
+title: Getting started
+body: |
+    #### Really simple example
 
-    - title: This is my second post
-      body: Lorem ipsum dolor ist...
+    ###### Write our data
+    
+    Let's make a really simple blog. In the pages/ folder, we'll create an index.yaml which will dictate the data for our homepage. Let's fill it out like so...
+
+    <script src="https://gist.github.com/1331179.js?file=index.yaml"></script>
+
+    Above, I've defined a list of posts, a bit of dummy content and a title for the page. The template key is the **only** necessary key/value in Caret and it lets the system know which template you want to render the data with.
+
+    The next thing to do is make that template.
+
+    ###### Create the template
+
+    Templates in Caret are written with the h2o templating language. It's really pretty and looks a bit like Liquid. Most of all, it's powerful & flexible so you can do practically anything with your data.
+
+    Because we defined 'template: post' in our index.yaml file, Caret will look for a file called post.html in the templates folder. Let's put one together really quickly...
+
+    <script src="https://gist.github.com/1331195.js?file=gistfile1.twig"></script>
+
+    That was pretty painless wasn't it. Obviously that's not valid HTML, but it's enough for us to check everything's working. Let's have a look in our browser.
+
+    ![Alt text](public/images/demo.gif)
+  
